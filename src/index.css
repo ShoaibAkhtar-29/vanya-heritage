@@ -1,0 +1,316 @@
+/* ==========================================================================
+   VANYA HERITAGE - LUXURY INDIAN SAREE ATELIER DESIGN SYSTEM
+   Editorial Luxury Aesthetic • Warm Ivory, Soft Cream, Deep Maroon, Antique Gold
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --bg-primary: #FFFDF8;       /* Warm Ivory */
+  --bg-secondary: #F5EFE5;     /* Soft Cream */
+  --bg-card: #FFFFFF;          /* Pure White for crisp card elevation */
+  --bg-overlay: rgba(41, 35, 31, 0.45);
+
+  --text-primary: #29231F;     /* Deep Charcoal Espresso */
+  --text-secondary: #5C524B;   /* Elegant Muted Umber */
+  --text-muted: #8A7E75;       /* Warm Stone */
+
+  --brand-maroon: #762B3B;     /* Royal Deep Maroon */
+  --brand-maroon-dark: #581C28;/* Deeper Maroon for Active/Focus */
+  --brand-maroon-hover: #8D3447;
+  --brand-maroon-light: #F7EBEF;/* Tint for tags */
+
+  --antique-gold: #B49A68;     /* Refined Antique Gold */
+  --antique-gold-light: #DFCFA8;
+  --antique-gold-subtle: rgba(180, 154, 104, 0.12);
+  --antique-gold-border: rgba(180, 154, 104, 0.35);
+
+  --border-subtle: #E7DED2;    /* Warm Beige */
+  --border-card: #EFE7DC;
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-display: 'Cinzel', serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Elevations */
+  --shadow-sm: 0 2px 8px rgba(41, 35, 31, 0.04);
+  --shadow-md: 0 8px 24px -4px rgba(41, 35, 31, 0.07);
+  --shadow-lg: 0 16px 40px -8px rgba(118, 43, 59, 0.09);
+  --shadow-modal: 0 25px 60px -15px rgba(41, 35, 31, 0.25);
+
+  /* Layout */
+  --max-width: 1360px;
+  --nav-height: 80px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+}
+
+/* Global Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Typography Utility Classes */
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+/* Subtle Indian Ornamental Divider */
+.gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 18px 0 28px;
+}
+
+.gold-divider::before,
+.gold-divider::after {
+  content: '';
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(90deg, transparent, var(--antique-gold));
+}
+
+.gold-divider::after {
+  background: linear-gradient(90deg, var(--antique-gold), transparent);
+}
+
+.gold-divider-icon {
+  color: var(--antique-gold);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 4px;
+}
+
+/* Section Header Motif */
+.section-header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.section-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--antique-gold);
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.75rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.section-subtitle {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin: 12px auto 0;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.15rem;
+  }
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+  .section-header {
+    margin-bottom: 36px;
+  }
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--brand-maroon);
+  color: #FFFFFF;
+  padding: 14px 34px;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--brand-maroon);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(118, 43, 59, 0.16);
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: var(--brand-maroon-dark);
+  border-color: var(--brand-maroon-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(118, 43, 59, 0.25);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: transparent;
+  color: var(--brand-maroon);
+  padding: 14px 32px;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--brand-maroon);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: var(--brand-maroon);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(118, 43, 59, 0.15);
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: transparent;
+  color: var(--antique-gold);
+  border: 1px solid var(--antique-gold);
+  padding: 12px 28px;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  background-color: var(--antique-gold);
+  color: #FFFFFF;
+}
+
+/* Badges */
+.badge-luxury {
+  display: inline-block;
+  padding: 4px 10px;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: rgba(255, 253, 248, 0.95);
+  color: var(--brand-maroon);
+  border: 1px solid var(--antique-gold-border);
+  backdrop-filter: blur(4px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
